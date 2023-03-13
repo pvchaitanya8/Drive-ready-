@@ -1,3 +1,5 @@
+    new one
+    
     Node* h1=head_ref;
       while(h1){
           if(h1->data==x and h1->prev==NULL){
