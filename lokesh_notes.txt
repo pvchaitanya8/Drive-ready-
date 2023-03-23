@@ -1,0 +1,757 @@
+13-10-22
+Thursday
+=====================================
+
+
+OSI Layers:
+-----------
+
+communication
+
+intermediatery devices
+
+media
+
+unix-novell ,apple os ,ms-dos
+
+
+protocol:
+---------
+set of instructions.
+
+
+architectures
+
+
+IPX/SPX - novell/unix
+
+Apple talk - apple
+
+NetBIOS - Microsoft
+
+cross-architecture
+
+
+TCP/IP
+------
+its a protocal suit(all clubed into it)
+it is in every OS
+
+command:
+--------
+services.msc
+
+description:
+-----------
+services avilable in ur system.
+
+
+
+TCP/IP model:
+-------------
+it consits of 4 layers
+
+1.Application Layer
+
+
+
+
+2.Transport
+
+
+
+
+3.Internet
+
+
+
+
+
+4.Network Access
+
+
+
+
+
+
+
+The above model is extended to 7 layers:
+ Then it is known as OSI model(Open system interconnection)
+
+
+
+
+source computer:                     																destination computer:
+----------------                      																---------------------
+
+7.application layer -->through apllication we send
+
+
+6.presentation ---->encoding and encryption 
+
+5.session      ----->identifies the which type of data(like video,audio etc)
+
+4. transport    ----> data is divided into equal segments.(like 1,1,1... or 5,5,5,5,....) 
+                      based on mtu-(maximum transmission unit)
+                      ->to avoid congestion
+
+
+splitting
+
+path
+
+
+eg:
+sending:  hi how are u
+
+hi           hi
+how          are
+are          how
+you         you
+
+in order to avoid it uses sequence numbers.
+
+unit is called as segments
+
+each segment -- has sequence numbers
+                       
+
+3.network --->ip address
+
+sourceIP and DestinationIP
+
+it is transformed as packet in network layer
+
+2.data link
+
+is communication happening with in lan or not
+
+source mac add  and dest mac address
+
+they also add HEADER                    DATA       TRAILER
+
+HEADER: extra data (ip,mac,seq etc)
+
+TRAILER:finalised so, no extra data will be added
+
+
+1.physical
+
+converts frame into signals
+
+signal coded
+  |
+  |
+(bits or bit stream)
+
+
+
+the above is known as Encapsulation
+
+
+
+senario:
+-------
+sending file
+
+File - 100MB
+
+
+
+
+
+ARP(Address resolution protocol)
+---------------------------------
+it will occur in data link layer
+
+
+map mac address to ip address
+
+
+HUB
+---
+
+Network Interface Card ---RJ45
+
+Broadcasting
+
+half duplex
+
+physical layer
+
+
+
+SWitch:
+------
+
+unicasting ---> 
+
+
+Full duplex----> both way communication.
+
+
+data link layer
+
+
+
+192.168.10.5
+
+
+
+
+
+
+
+
+ping -icmp------------> internet control messaging protocol
+
+
+MAT -----------> Mac address table
+
+Ram of switch ------> random access memory
+
+ip address ---------> mac address
+======================================================================================
+
+
+14-10-22
+Friday           PHYSICAL LAYER
+===============================================
+
+star topology - ethernet cables
+
+
+
+ethernet cables:
+----------------
+
+only range of ethernet cables is 100 meters
+
+1.stp
+
+2.utp
+
+
+1.stp:(sheilded twisted pair cable):
+-------------------------------------
+
+layer wise protection
+
+
+
+2.utp:(unsheilded twisted pair cable):
+--------------------------------------
+
+no layer wise protection
+
+
+why twist?
+
+
+4 pairs with 4 colors
+
+
+orange --->white orange
+
+blue ----->white blue
+
+brown ---->white brown
+
+green ----> white green
+
+
+8 leads
+
+twist
+-----
+
+we cannot remove twists.
+
+
+lead --copper
+
+8 leads of copper
+
+--------------
+
+--------------
+
+-------
+
+---
+
+there will be electrical distortion
+
+
+to avoid above problem -- twisted cables are used.
+
+note:
+-----
+more twisted----> more performance
+
+
+
+standard color coding:
+----------------------
+
+1. t568a
+
+2. t568b
+
+
+t568a:
+------
+
+pin 1 ----> white green
+pin2  ----->green
+pin3 ----->white orange
+pin4 ----->blue
+pin5 ----> white blue
+pin6 ---> orange
+pin7----->white brown
+pin8---->brown
+
+
+t568b:(standard color coding)
+-------
+wo
+o
+wg
+b
+wb
+g
+wb
+b
+
+difference b/w them
+
+1 2 3 and 6 will be changed.
+
+
+
+straight cable:
+----------------
+(both ends same colour coding)
+
+connecting different types of devices.
+
+
+t568a ----------------------------t568a
+
+t568b-----------------------------t568b
+
+
+cross-over cable:
+-----------------
+both ends different colors
+
+used to connect same type of devices (identical)
+
+computers,laptops,servers (all end devices comes into this category)
+two switches are coonected ---that mean all identical devices are connected.
+
+t568a ----------------------------t568b
+
+t568b-----------------------------t568a
+
+
+
+
+15-10-22
+saturday    LOGICAL LAYER
+===============================================
+
+
+lgical ----> network layer --- IP address----router
+
+
+
+A 0- 127     ----> N.H.H.H       255.0.0.0
+
+B 128 -191   ----->N.N.H.H       255.255.0.0
+
+c - 192 - 223 ---->N.N.N.H       255.255.255.0
+
+
+
+
+
+Subnet mask:
+-----------
+
+identifies which network belongs to which class.
+ based on subnetmask it will identifies which octate it is.
+ 
+ ip address class and ip address range will be identified by subnetmask in the computer
+
+
+scenario:
+----------
+
+pc1----------->                 s ------------      pc2
+
+192.168.10.1                                     192.168.20.20
+255.255.255.0                                    255.255.255.0
+
+packet drops.
+
+
+
+IN LINUX:
+-----------
+
+subnet mask ----> prefix length.
+
+A - 255.0.0.0 -    /8
+
+
+/ ---> reprents octate.
+
+
+B - 255.255.0.0 ---- /16
+
+
+c - 255.255.255.0 ---- /24
+
+
+eg:
+
+192.168.10.0  /24
+
+255.255.255.0
+
+
+there will be 256 ip address possible.
+
+
+172.7.90.90  /16(prefix length)
+
+255.255.0.0
+
+256*256 ip address will be available.
+
+
+
+
+RESERVED IPs:
+-------------
+
+
+1. network id  ----> first number in network
+
+2. broadcast id ----> last number in network
+
+id --> not usable /not valid/ invalid ip
+
+
+
+192.168.10.67
+
+255.255.255.0 /24
+
+
+192.168.10.0 ----------> network ID  --------> not usable
+
+usable IPs
+
+192.168.10.255 --------> Broadcast ID --------> not usable
+
+
+from above , last usable ip is ---> 192.168.10.254
+
+
+
+eg -2:
+
+
+172.67.89.78  /16
+
+
+172.67.0.0
+172.67.0.1
+
+
+172.67.1.0 --->256th
+
+last usable ip ---------> 172.67.255.254
+
+172.67.255.255
+
+------------------------------------------
+
+
+
+multicat range ------224 - range
+
+loopback  - 127 -range- always active 
+
+
+APIPA     - 169.254.0.0 -->169.254.255.255
+
+Automatic Private IP Addressing.
+
+
+
+DHCP - Dynamic Host configuration Protocol
+
+
+5 computers(assigning ip adress)
+
+
+ncpa.cpl ---> network control panel
+
+ethernet
+
+properties
+
+tcp ipV4
+
+properties
+
+desired ip
+
+
+DHCP - Dynamic Host configuration Protocol
+
+it is a service.
+DHCP server
+
+
+200 computers
+
+192.168.10.1 -------------------> 192.168.10.254
+
+
+
+DHCP -DHCP server
+
+DHCP -down -absence
+
+OS will generate ip address itself .(random ip address)
+
+And that should strat with >
+
+169.254.  ----------> computer
+
+
+The above process is known as APIPA Process.
+
+public ips    ----> reserved
+
+what are public ips?
+
+public ips also called as internet ip addresses   
+
+
+these are given by ISPs---------->Internet Service Providers
+
+
+devices ---> public ip ---> internet will get
+
+no public ip means no internet.
+
+
+
+IANA :
+
+divided into 5 regions through out world
+
+
+if exhausted then ?
+
+here comes concept of ipV6 address
+
+
+
+
+
+
+Private ips   ----> recommended ip address - no issues
+
+
+
+
+IPV6 Address:
+------------
+we are getting 340 un-decillion ips 
+
+
+
+
+
+
+
+28-10-2022
+Friday.
+================
+
+ethernet --> stp/utp
+
+fast ehernet -- 10/100 mbps
+
+gigabit ethernet 1 Gbps
+
+
+
+rj45 --ehernet port
+
+
+10gbps
+
+20gbps
+
+device manager ---->devmgmt.msc (shortcut)
+
+
+hub ---> broadcasting ---> only knows flooding
+
+disadvantages
+-------------
+
+security 
+performance
+half -duplex 
+
+
+switch ---> unicasting 
+
+security
+performance
+full duplex
+
+ARP :( address resolution protocol)
+
+mac dd -- ip address mapping
+
+mac --data link layer
+
+hub works in physical layer
+
+
+
+
+
+ARP Process:
+------------
+
+ping -- icmp , arp packet(arp done first) 
+
+
+physical --> nic hub
+
+data link layer --- switch, arp process , mac address
+
+network layer ---> router , routing process, ip address
+
+
+NETWORK LAYER:
+--------------
+
+
+layer 3 address - IP Address
+
+
+
+router ---> Operating system
+
+cisco router --  cisco IOS(Internetworking Operating system)
+
+router --- routing
+
+routing means :
+one network to another network 
+gateway
+
+
+
+192.168.10.29 ------> 192.168.10.26 ---------> switch is used since same network.
+
+192.168.10.29   ---- 192.168.20.26 ----> router/gateway.
+
+
+
+console caable -- roll over cable ---manfactured by cisco only.
+
+
+two types
+
+rj45 console -------------- rj45 console
+
+rj45 --------------- rs232c (serial)
+
+usb cable --- type A and type B
+
+
+
+router config:
+-------------
+
+1. user mode ---prompt --( > )
+
+simply says u r into router
+
+
+2. previlige execution mode 
+
+command:
+-------
+enable
+
+descrip:
+--------
+
+it changes from user mode to next mode
+
+> ---> #
+
+we can see the configuration , and we cannot edit in this mode.
+
+
+
+3. global conf.mode
+
+to edit
+
+command:
+----
+configure terminal
+
+from # --- configure#
+
+descrip:
+------
+from previlige to global mode
+
+to exit:
+-------
+ press exit
+
+or 
+
+ctrl+z
+
+
+shortcuts:
+----------
+en  + tab
+
+con + tab
+
+
+configure ter + tab
+
+
+
+
+
+command:
+-------
+show ip interface breif
+
+descrip:
+--------
+shows no of interfaces 
+
+we can only see communication interfaces(gig 0 gig 1)
+
+

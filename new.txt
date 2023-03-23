@@ -1,0 +1,115 @@
+wireless configuration
+radio signals
+wifi - wireless fidelity
+high frequency
+2.4g
+5.0g
+
+routing - wired router
+
+router - limited area connection
+
+kms
+
+router - communication between two or multiple different networks (sign board)
+
+purpose of this router is for internet
+
+internet - home,org,busi areas
+flexible connectivity
+free wifi
+
+
+---------------------------------------------------------------------------------------------------------------
+
+subnetting
+
+subnet mask - network
+
+192.168.10.67 /24
+255.255.255.0
+IP's - 256
+hosts(usable ips) - 254
+
+BROADACST STORM - the network performance degraded
+
+(192.168.10.0)/24
+
+1 switch - 100 computers 
+|
+|
+|
+2 switch - 100 computers
+
+arp,broadcast storm,security - to avoid these we use subnetting
+
+
+
+subnetting types - 
+	big network further splits into sub networks
+
+192.168.10.0/24	256 IPs
+
+hr - small
+account - small
+production - 1000 working 
+
+
+points to be considered:- 
+requirement
+nearest value
+new subnet mask
+no.of hosts,no of networks
+writing the range 
+
+1 problem:-
+req = 30 
+192.168.10.0
+255.255.255.0
+
+nearest value =32  = 2^5 
+new subnet mask = 255.255.255.224
+
+no of hosts per network = 2^5 = 32 
+no of networks = 2^3 /*(8-5)*/ = 8 networks and 32 ips for each network =8*32 = 256
+
+range:-
+
+192.168.10.0/27
+255.255.255.224
+2^h = 32
+192.168.10.0 - 192.168.10.31
+192.168.32. - 192.168.10.63
+192.168.10.64 - 192.168.10.95
+192.168.10.96 - 192.168.10.127
+192.168.10.128 - 192.168.10.179
+.
+.
+192.168.10.224-  - 192.168.10.255
+
+2nd problem;-
+req =1000
+
+/22
+
+
+255.255.252.0/22
+
+2^10 =1024 per network
+
+no of networks = 2^6 = 64
+
+172.16.0.0/22
+
+
+blocks calculation 2^h/256
+
+
+172.16.0.0 - 172.16.3.255
+172.16.4.0 - 172.16.7.255
+...
+
+
+--> FLSM (fixed length subnet mask)
+--> VLSM (variable length subnet mask)
+
