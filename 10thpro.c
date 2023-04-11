@@ -52,31 +52,30 @@ void main()
 			printstat();
 		}
 	}
-printstat();
-len=strlen(s2);
-while(len)
-{
-ch1=pop();
-if(ch1=='x')
-{
-printf("\n$");
-break;
-}
-if(ch1=='+'||ch1=='/'||ch1=='*'||ch1=='-')
-{
-ch3=pop();
-if(ch3!='E')
-{
-printf("errror");
-return;
-}
-else
-{
-push('E');
-printstat();
-}
-}
-ch2=ch1;
-}
-getch();
+	printstat();
+	len=strlen(s2);
+	while(len)
+	{
+		ch1=pop();
+		if(ch1=='x')
+		{
+			printf("\n$");
+			break;
+		}
+		if(ch1=='+'||ch1=='/'||ch1=='*'||ch1=='-')
+		{
+			ch3=pop();
+			if(ch3!='E')
+			{
+				printf("errror");
+				return;
+			}
+			else
+			{
+				push('E');
+				printstat();
+			}
+		}
+		ch2=ch1;
+	}
 }
