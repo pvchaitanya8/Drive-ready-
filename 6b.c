@@ -73,3 +73,31 @@ void addToResult(char c)
 			return;
 	followResult[m++]=c;
 }
+
+/*
+Enter the no.of productions: 8
+Enter 8 productions
+Production with multiple terns should be give as separate productions
+E=TD
+D=+TD
+D=$
+T=FS
+S=*FS
+S=$
+F=<E>
+F=a
+Find Follow of -->E
+FOLLOW(E) = {$ -->E}
+Do you want to continue(Press1to continue....)?1
+Find Follow of -->D
+FOLLOW(ED) = { >  }
+Do you want to continue(Press1to continue....)?1
+Find Follow of -->T
+FOLLOW(T) = { + $ >  }
+Do you want to continue(Press1to continue....)?S
+Find Follow of -->FOLLOW(S) = {$ >  }
+Do you want to continue(Press1to continue....)?1
+Find Follow of -->F
+FOLLOW(F) = { * + $ >  }
+Do you want to continue(Press1to continue....)?
+*/
