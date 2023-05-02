@@ -40,3 +40,29 @@ int main ()
 		index=3; 
  	} 
 }
+
+
+/*
+
+Enter Number of Production : 4
+Enter the grammar as E->E-A :
+E->EA|A
+A->AT|a
+T=a
+E->i
+
+GRAMMAR : : : E->EA|A is left recursive.
+Grammar without left recursion:
+E->AE'
+E'->AE'|E
+
+GRAMMAR : : : A->AT|a is left recursive.
+Grammar without left recursion:
+A->aA'
+A'->TA'|E
+
+GRAMMAR : : : T=a is not left recursive.
+
+GRAMMAR : : : E->i is not left recursive.
+
+*/
