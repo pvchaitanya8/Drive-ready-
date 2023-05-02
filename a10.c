@@ -79,3 +79,24 @@ void main()
 		ch2=ch1;
 	}
 }
+
+LR PARSING
+ENTER THE EXPRESSION
+id+id*id-id
+$
+$id
+$E
+$E+
+$E+id
+$E+E
+$E+E*
+$E+E*id
+$E+E*E
+$E+E*E-
+$E+E*E-id
+$E+E*E-E
+$E+E*E-E
+$E+E*E
+$E+E
+$E
+$
