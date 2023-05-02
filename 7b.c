@@ -34,3 +34,13 @@ int main()
 	printf(" A->%s",modifiedGram);
 	printf("\n X->%s\n",newGram);
 }
+
+/*
+
+Enter Production: A->bE+acF|bE+f
+
+Grammar without Left Factoring:
+ A->bE+X
+ X->acF|f
+ 
+ */
