@@ -150,3 +150,35 @@ void main()
  		}	
  	}
 }
+
+/*
+
+ enter the input string:i+(i*i)$
+        stack    input
+        $E              i+(i*i)$
+        $eT             i+(i*i)$
+        $etF            i+(i*i)$
+        $eti            i+(i*i)$
+        $et             +(i*i)$
+        $e              +(i*i)$
+        $eT+            +(i*i)$
+        $eT             (i*i)$
+        $etF            (i*i)$
+        $et)E(          (i*i)$
+        $et)E           i*i)$
+        $et)eT          i*i)$
+        $et)etF         i*i)$
+        $et)eti         i*i)$
+        $et)et          *i)$
+        $et)etF*        *i)$
+        $et)etF         i)$
+        $et)eti         i)$
+        $et)et          )$
+        $et)e           )$
+        $et)            )$
+        $et             $
+        $e              $
+        $               $
+                 SUCCESS
+                 
+*/
