@@ -136,3 +136,23 @@ int main()
 	}
 	return 0;
 }
+
+
+Enter any String
+a+a*a$
+STACK           INPUT
+0               a+a*a$
+0a5             +a*a$
+0F3             +a*a$
+0T2             +a*a$
+0E1             +a*a$
+0E1+6           a*a$
+0E1+6a5                 *a$
+0E1+6F3                 *a$
+0E1+6T9                 *a$
+0E1+6T9*7               a$
+0E1+6T9*7a5             $
+0E1+6T9*7F10            $
+0E1+6T9                 $
+0E1             $
+Given String is accepted
